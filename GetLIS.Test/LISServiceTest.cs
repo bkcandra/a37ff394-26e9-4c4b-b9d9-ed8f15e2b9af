@@ -113,7 +113,7 @@ namespace GetLIS.Test
 
             // Assert
             Assert.IsTrue(result);
-            Assert.AreEqual(new int[] { 1, 2, 3, 4, 5 }, outputArray);
+            Assert.That(new int[] { 1, 2, 3, 4, 5 }, Is.EqualTo(outputArray));
         }
 
         [Test]
@@ -127,7 +127,7 @@ namespace GetLIS.Test
 
             // Assert
             Assert.IsFalse(result);
-            Assert.AreEqual(Array.Empty<int>(), outputArray);
+            Assert.That(Array.Empty<int>(), Is.EqualTo(outputArray));
         }
 
         [Test]
@@ -141,7 +141,7 @@ namespace GetLIS.Test
 
             // Assert
             Assert.IsTrue(result);
-            Assert.AreEqual(new int[] { 1, 2, 3, 4, 5 }, outputArray);
+            Assert.That(new int[] { 1, 2, 3, 4, 5 }, Is.EqualTo(outputArray));
         }
 
 
