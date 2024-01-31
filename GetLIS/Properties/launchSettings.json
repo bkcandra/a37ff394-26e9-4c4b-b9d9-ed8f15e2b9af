@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GetLIS": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
