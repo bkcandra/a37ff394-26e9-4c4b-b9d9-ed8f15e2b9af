@@ -2,7 +2,7 @@
 
 namespace GetLIS
 {
-    internal class Program
+    internal static class Program
     {
         /// <summary>
         /// Continuously prompts the user to input a sequence of numbers separated by spaces.
@@ -21,7 +21,7 @@ namespace GetLIS
                     break;
                 }
 
-                Console.WriteLine(LISService.GetLISfromString($"{input}\n"));
+                Console.WriteLine(LisService.GetLISfromString($"{input}\n"));
                 Console.WriteLine(); // adding space for readability
             }
         }

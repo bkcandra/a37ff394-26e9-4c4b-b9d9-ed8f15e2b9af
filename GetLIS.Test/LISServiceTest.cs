@@ -12,7 +12,7 @@ namespace GetLIS.Test
             var expected = "1 5 9";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -26,7 +26,7 @@ namespace GetLIS.Test
             var expected = "1710 2461 9288 10195 10431 12485";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -40,7 +40,7 @@ namespace GetLIS.Test
             var expected = "10298 10897 12291 15037 18446 23435 25333 27266";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -54,7 +54,7 @@ namespace GetLIS.Test
             var expected = "3862 16353 22813 28735";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -68,7 +68,7 @@ namespace GetLIS.Test
             var expected = "3";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -82,7 +82,7 @@ namespace GetLIS.Test
             var expected = "";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -96,7 +96,7 @@ namespace GetLIS.Test
             var expected = "Invalid input. Please enter a valid sequence of numbers.";
 
             // Act
-            var result = LISService.GetLISfromString(input);
+            var result = LisService.GetLISfromString(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -109,11 +109,14 @@ namespace GetLIS.Test
             var input = "1 2 3 4 5";
 
             // Act
-            var result = LISService.ConvertToIntArray(input, out int[] outputArray);
+            var result = LisService.ConvertToIntArray(input, out int[] outputArray);
 
-            // Assert
-            Assert.IsTrue(result);
-            Assert.That(new int[] { 1, 2, 3, 4, 5 }, Is.EqualTo(outputArray));
+            Assert.Multiple(() =>
+            {
+                // Assert
+                Assert.That(result, Is.True);
+                Assert.That(new int[] { 1, 2, 3, 4, 5 }, Is.EqualTo(outputArray));
+            });
         }
 
         [Test]
@@ -123,11 +126,14 @@ namespace GetLIS.Test
             var input = "1 2 a 4 5";
 
             // Act
-            var result = LISService.ConvertToIntArray(input, out int[] outputArray);
+            var result = LisService.ConvertToIntArray(input, out int[] outputArray);
 
-            // Assert
-            Assert.IsFalse(result);
-            Assert.That(Array.Empty<int>(), Is.EqualTo(outputArray));
+            Assert.Multiple(() =>
+            {
+                // Assert
+                Assert.That(result, Is.False);
+                Assert.That(Array.Empty<int>(), Is.EqualTo(outputArray));
+            });
         }
 
         [Test]
@@ -137,14 +143,14 @@ namespace GetLIS.Test
             var input = " 1   2 3    4   5 ";
 
             // Act
-            var result = LISService.ConvertToIntArray(input, out int[] outputArray);
+            var result = LisService.ConvertToIntArray(input, out int[] outputArray);
 
-            // Assert
-            Assert.IsTrue(result);
-            Assert.That(new int[] { 1, 2, 3, 4, 5 }, Is.EqualTo(outputArray));
+            Assert.Multiple(() =>
+            {
+                // Assert
+                Assert.That(result, Is.True);
+                Assert.That(new int[] { 1, 2, 3, 4, 5 }, Is.EqualTo(outputArray));
+            });
         }
-
-
-
     }
 }
