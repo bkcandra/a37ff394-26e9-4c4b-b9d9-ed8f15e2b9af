@@ -5,9 +5,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "actions" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "actions" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v5
       with:
         push: true
         tags: bkcandra/getlis:latest
