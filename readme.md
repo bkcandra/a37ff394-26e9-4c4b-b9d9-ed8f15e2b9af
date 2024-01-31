@@ -4,7 +4,7 @@ The GetLIS application is a .NET console application that returns the Longest In
 
 ## Using Docker Image
 
-You can easily run the GetLIS application using Docker.
+You can easily run the GetLIS application using Docker or clone the program to your working directory.
 
 ### Prerequisites
 
