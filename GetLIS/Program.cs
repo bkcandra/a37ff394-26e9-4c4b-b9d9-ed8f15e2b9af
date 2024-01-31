@@ -1,10 +1,29 @@
-﻿namespace GetLIS
+﻿using GetLIS.Services;
+
+namespace GetLIS
 {
     internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Continuously prompts the user to input a sequence of numbers separated by spaces.
+        /// Calculates and displays the longest increasing subsequence for each valid input.
+        /// application will runs in a loop and can be exited by entering 'exit'.
+        /// </summary>
+        private static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            while (true)
+            {
+                Console.WriteLine("Enter a sequence of numbers separated by spaces ('exit' to quit):");
+                string input = Console.ReadLine() ?? "";
+
+                if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+
+                Console.WriteLine(LISService.GetLISfromString($"{input}\n"));
+                Console.WriteLine(); // adding space for readability
+            }
         }
     }
 }
